@@ -16,7 +16,7 @@ public class CardController {
      * @return All cards from the database
      */
     @GetMapping("/getAll")
-    public List<Card> getAll() {
+    public List<Card> getAll() throws Exception {
         return cardService.getAll();
     }
 
@@ -33,7 +33,7 @@ public class CardController {
      * @param card the card submitted by user
      */
     @PostMapping("/addCard")
-    public String addCard(@RequestBody Card card) {
+    public String addCard(@RequestBody Card card) throws Exception {
         return cardService.addCard(card);
     }
 }
