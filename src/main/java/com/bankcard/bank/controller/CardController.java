@@ -25,7 +25,7 @@ public class CardController {
      * @return List of cards
      */
     @GetMapping("/search")
-    public List<Card> search(@RequestParam String keyword) {
+    public List<Card> search(@RequestParam String keyword) throws Exception {
         return cardService.search(keyword);
     }
 

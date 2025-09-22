@@ -10,11 +10,13 @@ const loadCards = async () => {
 
         // Travel the response from backend
         res.data.map(card => {
+            // replace the first 12 digts to *
+            const maskedPan = card.pan.slice(-4).padStart(card.pan.length, '*');
             const tr = document.createElement("tr");
             tr.innerHTML = `
             <td>${card.id}</td>
             <td>${card.cardHolder}</td>
-            <td>${card.pan}</td>
+            <td>${maskedPan}</td>
             <td>${card.createTime}</td>
             `
             row.appendChild(tr);
@@ -43,11 +45,13 @@ const search = async (e) => {
 
         // Travel the response from backend
         res.data.map(card => {
+            const maskedPan = card.pan.slice(-4).padStart(card.pan.length, '*');
+
             const tr = document.createElement("tr");
             tr.innerHTML = `
             <td>${card.id}</td>
             <td>${card.cardHolder}</td>
-            <td>${card.pan}</td>
+            <td>${maskedPan}</td>
             <td>${card.createTime}</td>
             `
             row.appendChild(tr);
