@@ -3,9 +3,7 @@ package com.bankcard.bank.controller;
 import com.bankcard.bank.pojo.Card;
 import com.bankcard.bank.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,8 +20,20 @@ public class CardController {
         return cardService.getAll();
     }
 
+    /**
+     * @param keyword the keyword for searching the last 4 digits users entered
+     * @return List of cards
+     */
     @GetMapping("/search")
     public List<Card> search(@RequestParam String keyword) {
         return cardService.search(keyword);
+    }
+
+    /**
+     * @param card the card submitted by user
+     */
+    @PostMapping("/addCard")
+    public String addCard(@RequestBody Card card) {
+        return cardService.addCard(card);
     }
 }

@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Add new Card</title>
-    <script type="module" src="./js/card.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <!--  use type="module, otherwise the brower connt recognize it"-->
+    <script type="module" src="./js/addCard.js"></script>
+    <!--  import axios to call apis-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
+<header>
+    <h1>Add a New Card</h1>
+    <a href="http://localhost:8080/index.html">
+        <button onclick="">← Back</button>
+    </a>
+</header>
+<form id="addCardForm">
+    <label for="cardHolder">Card Holder Name</label>
+    <input type="text" class="inputBar" id="cardHolder" placeholder="Enter card holder name" required>
 
+    <label for="pan">Primary Account Number</label>
+    <!--    make sure that pan is 16 digits-->
+    <input type="text" class="inputBar" maxlength="16" id="pan" placeholder="Enter your 16 digits PAN number"
+           required>
+    <button type="submit">Add Card</button>
+</form>
 </body>
 </html>

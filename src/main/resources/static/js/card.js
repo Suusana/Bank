@@ -31,8 +31,8 @@ window.onload = loadCards;
 const searchForm = document.getElementById("search");
 const search = async (e) => {
     e.preventDefault();
+    const keyword = document.getElementById("keyword").value;
     try {
-        const keyword = document.getElementById("keyword").value;
         const res = await http.get("/search", {params: {keyword}});
 
         // get the parent element of inserting data
@@ -57,5 +57,4 @@ const search = async (e) => {
     }
 }
 // bind the search form with search function, and runs when trigger submit action
-searchForm.addEventListener("submit",search);
-
+searchForm.addEventListener("submit", search);
