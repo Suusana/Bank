@@ -4,17 +4,23 @@
   <meta charset="UTF-8">
   <title>Card Management</title>
   <link rel="stylesheet" href="./css/style.css">
-  <script src="./js/card.js"></script>
+<!--  use type="module, otherwise the brower connt recognize it"-->
+  <script type="module" src="./js/card.js"></script>
+<!--  import axios to call apis-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 <header>
   <h1>Card Management</h1>
-  <button onclick="">+ Add a New Card</button>
+  <a href="http://localhost:8080/Add.html">
+    <button onclick="">+ Add a New Card</button>
+  </a>
 </header>
-<form class="search">
-  <input type="text" class="searchInput" placeholder="Search by the last 4 digits">
+<form class="search" id="search">
+  <input type="text" class="searchInput" id="keyword" placeholder="Search by the last 4 digits">
   <button type="submit">Search</button>
 </form>
+
 <main>
   <table>
     <tr>
@@ -23,34 +29,10 @@
       <th>PAN</th>
       <th>Create Time</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>John Doe</td>
-      <td>1234 1234 1234 1234</td>
-      <td>09-20-2025 12:50</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>John Doe</td>
-      <td>1234 1234 1234 1234</td>
-      <td>09-20-2025 12:50</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>John Doe</td>
-      <td>1234 1234 1234 1234</td>
-      <td>09-20-2025 12:50</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>John Doe</td>
-      <td>1234 1234 1234 1234</td>
-      <td>09-20-2025 12:50</td>
-    </tr>
+    <tbody id="Info">
+    <!--    Here will display all the card from database-->
+    </tbody>
   </table>
-
 </main>
-<p>Showing 3 of 3 cards</p>
-
 </body>
 </html>
