@@ -63,7 +63,7 @@ INSERT INTO bank.card (id, card_holder, PAN, create_time, last_4_digits) VALUES 
 ### Design Reason:
 1. All tables need a unique identifier, so an integer primary key **(id)** is used to efficient indexing.  
 2. Used varchar(50) to flexibly store different length of name and make sure that we can save some storage usage.  
-3. Although PAN is numbers, but there are a posibility that the first digit of PAN is 0 which won't be store by Integer (eg. 0155 => 155), so I finnally used varchar(64) to store the PAN(encrypted PAN). Also, the PAN should be unique.
+3. Although PAN is numbers, they will encrypted before store, so I finnally used varchar(64) to store the PAN(encrypted PAN). Also, the PAN should be unique.
 4. Used datetime to store the created time of the card so that we can know the precise time of the card.
 5. Store the last 4 digits of the card used to search function, because after AES encryption, it is impossible to find the pan by the last 4 digits. But we can find it by last_4_digits column.
 
