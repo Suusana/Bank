@@ -68,7 +68,7 @@ INSERT INTO bank.card (id, card_holder, PAN, create_time, last_4_digits) VALUES 
 5. Store the last 4 digits of the card used to search function, because after AES encryption, it is impossible to find the pan by the last 4 digits. But we can find it by last_4_digits column.
 
 ### When runs this project
-please go to the url: http://localhost:8080/index.html to see the feature.
+please go to the url: http://localhost:8080/index.html to see the feature.  
 You will see two pages which looks like:
 <img width="1258" height="844" alt="image" src="https://github.com/user-attachments/assets/c6cdd633-a4fe-4ac9-8b56-fd6ad8b3af6e" />  
 <img width="1359" height="498" alt="image" src="https://github.com/user-attachments/assets/4bba11da-c0e7-4c8b-af6c-612df47e494f" />
