@@ -33,7 +33,7 @@ public class CardController {
      * @param card the card submitted by user
      */
     @PostMapping("/addCard")
-    public String addCard(@RequestBody Card card) throws Exception {
+    public Integer addCard(@RequestBody Card card) throws Exception {
         return cardService.addCard(card);
     }
 }

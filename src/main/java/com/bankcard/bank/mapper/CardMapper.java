@@ -13,7 +13,7 @@ public interface CardMapper {
     /**
      * @return All cards from the database
      */
-    @Select("select * from Card")
+    @Select("select * from card")
     List<Card> getAllCards();
 
 
@@ -28,7 +28,7 @@ public interface CardMapper {
      * @param card the card submitted by user
      */
     @Insert("insert into card (card_holder,PAN,create_time,last_4_digits) values (#{cardHolder},#{pan},#{createTime},#{last4Digits})")
-    void addCard(Card card);
+    Integer addCard(Card card);
 
 
     /**

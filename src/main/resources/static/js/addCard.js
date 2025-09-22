@@ -15,7 +15,8 @@ const addCard = async (e) => {
 
     try {
         const res = await http.post("/addCard", {pan: pan, cardHolder: cardHolder})
-        if (res.data == "PAN exists") {
+        console.log(res.data)
+        if (res.data === 0) {
             alert("The PAN already exists!");
             return;
         } else {
